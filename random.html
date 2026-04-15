@@ -2,17 +2,31 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="refresh" content="0;url=https://etok.me">
-		<title>Redirecting...</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="https://fartlabs.org/favicon.ico">
+		<title>Random site | etok webring</title>
+		<script src="https://cdn.jsdelivr.net/gh/diamondburned/libwebring@nightly/dist/webring-element.js" type="module"></script>
+		<style>
+			:root { --color-alpha: white; --color-beta: black; }
+			body { padding: 0; margin: 0 0 0 0; background-color: var(--color-alpha); color: var(--color-beta); font-family: serif; max-width: 900px; line-height: 1.6; }
+			body a { color: var(--color-beta); text-decoration: none; }
+			body a:hover { background-color: var(--color-beta); color: var(--color-alpha); }
+			@media (prefers-color-scheme: dark) {
+				:root { --color-alpha: black; --color-beta: white; }
+			}
+		</style>
 	</head>
 	<body>
 		<p>Redirecting to a random site...</p>
-		<script>
-			var sites = [
-				"https://etok.me"
-			];
-			var random = sites[Math.floor(Math.random() * sites.length)];
-			window.location.replace(random);
+		<script type="module">
+			fetch('/webring.json')
+				.then(r => r.json())
+				.then(data => {
+					const sites = data.sites.map(s => s.link);
+					const random = sites[Math.floor(Math.random() * sites.length)];
+					const url = random.includes('://') ? random : `https://${random}`;
+					window.location.replace(url);
+				});
 		</script>
 	</body>
 </html>

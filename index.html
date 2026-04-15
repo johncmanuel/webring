@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" id="rss">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="https://fartlabs.org/favicon.ico">
-		<title>FartLabs Webring</title>
+		<title>etok webring</title>
+		<script src="https://cdn.jsdelivr.net/gh/diamondburned/libwebring@nightly/dist/webring-element.js" type="module"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/diamondburned/libwebring@nightly/dist/webring.css">
 		<style>
 			:root { --color-alpha: white; --color-beta: black; }
 			body { padding: 0; margin: 0 0 0 0; background-color: var(--color-alpha); color: var(--color-beta); font-family: serif; max-width: 900px; line-height: 1.6; }
@@ -27,6 +29,7 @@
 		</style>
 	</head>
 	<body>
+		<webring-element name="etok" src="/webring.json"></webring-element>
 		<ol id="icons">
 			<li data-lang="en" id="etok">
 				<a href="https://etok.me">etok</a>
@@ -37,7 +40,7 @@
 				A webring for FartLabs members and friends. Hand-crafted sites welcome.
 			</p>
 			<p>
-				To join, submit a <a href="https://github.com/FartLabs/webring" target="_blank">pull request</a> adding yourself to <code>index.html</code>.<br />
+				To join, submit a <a href="https://github.com/FartLabs/webring" target="_blank">pull request</a> adding yourself to <code>webring.json</code>.<br />
 				Keep it simple: hand-crafted wikis, portfolios, and personal sites.<br />
 				<a href="random.html">Random site</a>
 			</p>
