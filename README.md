@@ -22,3 +22,7 @@ A webring for FartLabs members and friends. Hand-crafted sites welcome.
 ## Member Sites
 
 Visit [webring.fartlabs.com](https://webring.fartlabs.com) to browse the ring.
+
+---
+
+Built with 🧪 [**@FartLabs**](https://github.com/FartLabs)
